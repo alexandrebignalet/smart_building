@@ -1,64 +1,176 @@
-<div class="container">
-  <div class="row">
-    <div class="col-3 offset-md-4">
-      <div class="card">
-        <div class="card-header">Bureau Sud-Ouest</div>
-        <div class="card-block text-center" >
-          <ngb-tabset #t="ngbTabset" [justify]="'justified'">
-            <ngb-tab id="tab-selectbyid1">
-              <ng-template ngbTabTitle>
-                <i class="fa fa-thermometer-half fa-1" aria-hidden="true"></i>
-              </ng-template>
-              <ng-template ngbTabContent>
-                <span class="fa-2">25°</span>
-                <br>
-                <mat-slider
-                  class="example-margin"
-                  [vertical]="false"
-                  [thumb-label]="true"
-                >
-                </mat-slider>
-              </ng-template>
-            </ngb-tab>
-            <ngb-tab id="tab-selectbyid2">
-              <ng-template ngbTabTitle>
-                <i class="fa fa-camera fa-1" aria-hidden="true"></i>
-              </ng-template>
-              <ng-template ngbTabContent>
 
-                <video controls autoplay>
-                  <source src="movie.mp4" type="video/mp4">
-                  <source src="movie.ogg" type="video/ogg">
-                  Your browser does not support the video tag.
-                </video>
+<router-outlet name="navbar"></router-outlet>
 
-              </ng-template>
-            </ngb-tab>
-            <ngb-tab id="tab-selectbyid3">
-              <ng-template ngbTabTitle>
-                <i class="fa fa-lightbulb-o fa-1" aria-hidden="true"></i>
-              </ng-template>
-              <ng-template ngbTabContent>
-                <mat-slide-toggle>Lampe murale</mat-slide-toggle>
-                <mat-slide-toggle>Lampe plafond</mat-slide-toggle>
-              </ng-template>
-            </ngb-tab>
-            <ngb-tab id="tab-selectbyid4">
-              <ng-template ngbTabTitle>
-                <i class="fa fa-clock-o fa-1" aria-hidden="true"></i>
-              </ng-template>
-              <ng-template ngbTabContent>Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid.
-                <p>Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table
-                  craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl
-                  cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit. Keytar helvetica VHS salvia
-                  yr, vero magna velit sapiente labore stumptown. Vegan fanny pack odio cillum wes anderson 8-bit, sustainable jean
-                  shorts beard ut DIY ethical culpa terry richardson biodiesel. Art party scenester stumptown, tumblr butcher vero
-                  sint qui sapiente accusamus tattooed echo park.</p>
-              </ng-template>
-            </ngb-tab>
-          </ngb-tabset>
-        </div>
+<hr class="separator"/>
+
+
+<swiper [config]="config" [(index)]="index">
+  <div>
+    <div class="room text-center">
+      <div class="room-header fa-2x">Bureau Sud-Ouest</div>
+      <div class="room-block" >
+        <ngb-tabset #t="ngbTabset" [justify]="'justified'">
+          <ngb-tab id="tab-selectbyid1">
+            <ng-template ngbTabTitle>
+              <i class="fa fa-thermometer-half fa-1" aria-hidden="true"></i>
+            </ng-template>
+            <ng-template ngbTabContent>
+              <span class="fa-2">25°</span>
+              <br>
+              <mat-slider
+                class="example-margin"
+                [vertical]="false"
+                [thumb-label]="true"
+              >
+              </mat-slider>
+            </ng-template>
+          </ngb-tab>
+          <ngb-tab id="tab-selectbyid2">
+            <ng-template ngbTabTitle>
+              <i class="fa fa-camera fa-1" aria-hidden="true"></i>
+            </ng-template>
+            <ng-template ngbTabContent>
+
+
+
+            </ng-template>
+          </ngb-tab>
+          <ngb-tab id="tab-selectbyid3">
+            <ng-template ngbTabTitle>
+              <i class="fa fa-lightbulb-o fa-1" aria-hidden="true"></i>
+            </ng-template>
+            <ng-template ngbTabContent>
+              <br>
+              Lampe murale<mat-slide-toggle></mat-slide-toggle>
+              <hr>
+              Lampe murale<mat-slide-toggle></mat-slide-toggle>
+              <br>
+            </ng-template>
+          </ngb-tab>
+          <ngb-tab id="tab-selectbyid4">
+            <ng-template ngbTabTitle>
+              <i class="fa fa-clock-o fa-1" aria-hidden="true"></i>
+            </ng-template>
+            <ng-template ngbTabContent>
+              <ngb-timepicker [(ngModel)]="time"></ngb-timepicker>
+              <hr>
+              <pre>Fermeture prévue à: {{time.hour}}h{{time.minute}}</pre>
+            </ng-template>
+          </ngb-tab>
+        </ngb-tabset>
       </div>
     </div>
   </div>
-</div>
+  <div>
+    <div class="room text-center">
+      <div class="room-header fa-2x">Bureau Nord-Ouest</div>
+      <div class="room-block" >
+        <ngb-tabset #t="ngbTabset" [justify]="'justified'">
+          <ngb-tab id="tab-selectbyid100">
+            <ng-template ngbTabTitle>
+              <i class="fa fa-thermometer-half fa-1" aria-hidden="true"></i>
+            </ng-template>
+            <ng-template ngbTabContent>
+              <span class="fa-2">25°</span>
+              <br>
+              <mat-slider
+                class="example-margin"
+                [vertical]="false"
+                [thumb-label]="true"
+              >
+              </mat-slider>
+            </ng-template>
+          </ngb-tab>
+          <ngb-tab id="tab-selectbyid200">
+            <ng-template ngbTabTitle>
+              <i class="fa fa-camera fa-1" aria-hidden="true"></i>
+            </ng-template>
+            <ng-template ngbTabContent>
+
+
+
+            </ng-template>
+          </ngb-tab>
+          <ngb-tab id="tab-selectbyid300">
+            <ng-template ngbTabTitle>
+              <i class="fa fa-lightbulb-o fa-1" aria-hidden="true"></i>
+            </ng-template>
+            <ng-template ngbTabContent>
+              <br>
+              Lampe murale<mat-slide-toggle></mat-slide-toggle>
+              <hr>
+              Lampe murale<mat-slide-toggle></mat-slide-toggle>
+              <br>
+            </ng-template>
+          </ngb-tab>
+          <ngb-tab id="tab-selectbyid400">
+            <ng-template ngbTabTitle>
+              <i class="fa fa-clock-o fa-1" aria-hidden="true"></i>
+            </ng-template>
+            <ng-template ngbTabContent>
+              <ngb-timepicker [(ngModel)]="time"></ngb-timepicker>
+              <hr>
+              <pre>Fermeture prévue à: {{time.hour}}h{{time.minute}}</pre>
+            </ng-template>
+          </ngb-tab>
+        </ngb-tabset>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="room text-center">
+      <div class="room-header fa-2x">Bureau Sud-Est</div>
+      <div class="room-block" >
+        <ngb-tabset #t="ngbTabset" [justify]="'justified'">
+          <ngb-tab id="tab-selectbyid10">
+            <ng-template ngbTabTitle>
+              <i class="fa fa-thermometer-half fa-1" aria-hidden="true"></i>
+            </ng-template>
+            <ng-template ngbTabContent>
+              <span class="fa-2">25°</span>
+              <br>
+              <mat-slider
+                class="example-margin"
+                [vertical]="false"
+                [thumb-label]="true"
+              >
+              </mat-slider>
+            </ng-template>
+          </ngb-tab>
+          <ngb-tab id="tab-selectbyid20">
+            <ng-template ngbTabTitle>
+              <i class="fa fa-camera fa-1" aria-hidden="true"></i>
+            </ng-template>
+            <ng-template ngbTabContent>
+
+
+
+            </ng-template>
+          </ngb-tab>
+          <ngb-tab id="tab-selectbyid30">
+            <ng-template ngbTabTitle>
+              <i class="fa fa-lightbulb-o fa-1" aria-hidden="true"></i>
+            </ng-template>
+            <ng-template ngbTabContent>
+              <br>
+              Lampe murale<mat-slide-toggle></mat-slide-toggle>
+              <hr>
+              Lampe murale<mat-slide-toggle></mat-slide-toggle>
+              <br>
+            </ng-template>
+          </ngb-tab>
+          <ngb-tab id="tab-selectbyid40">
+            <ng-template ngbTabTitle>
+              <i class="fa fa-clock-o fa-1" aria-hidden="true"></i>
+            </ng-template>
+            <ng-template ngbTabContent>
+              <ngb-timepicker [(ngModel)]="time"></ngb-timepicker>
+              <hr>
+              <pre>Fermeture prévue à: {{time.hour}}h{{time.minute}}</pre>
+            </ng-template>
+          </ngb-tab>
+        </ngb-tabset>
+      </div>
+    </div>
+  </div>
+</swiper>

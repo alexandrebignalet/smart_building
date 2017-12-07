@@ -1,0 +1,47 @@
+@import '~swiper/dist/css/swiper.min.css';
+
+.separator {
+  margin-left:2%;
+  margin-right:2%;
+  color:lightgrey;
+  border-top: 1px solid;
+  margin-top: 10px;
+}
+
+.swiper-container {
+  width: 100%;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+.swiper-slide {
+  background-position: center;
+  background-size: cover;
+  background-color: transparent;
+  width: 300px;
+  height: 300px;
+}
+
+.room {
+  margin:12%;
+}
+
+.room-block {
+  background-color: #f1eded;
+  border-radius:3%;
+  width: 250px;
+  height: 400px;
+  margin:auto;
+}
+
+.room-header {
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.nav-item {
+  background-color: #f1eded!important;
+}
+
+.nav-tabs .nav-link.active {
+  background-color: #f1eded!important;
+}

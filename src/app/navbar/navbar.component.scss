@@ -1,0 +1,49 @@
+.avatar img {
+  width: 100px;
+  height: 100px;
+  max-width: 100px;
+  max-height: 100px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  border: 5px solid #00ffc7;
+  box-shadow: 0px 2px 9px 0px rgba(0, 0, 0, 0.55);
+}
+
+.navcontainer {
+  padding:2%;
+}
+
+.nav-box {
+  margin-top: 5%;
+}
+
+.nav-box i {
+  color: #00ffc7;
+}
+
+.alert-box {
+  margin-top: -1%;
+}
+
+.alert-box-title {
+  color: #00ffc7;
+}
+
+.alert-box-content {
+  color: white;
+}
+
+.right-box {
+  color:white;
+  padding-top: 2%;
+}
+
+.right-box i {
+  color:white;
+}
+
+.city-box-content {
+  color:#c3bcbc;
+  font-size: 65%;
+}
