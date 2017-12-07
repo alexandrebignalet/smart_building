@@ -1,0 +1,19 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~font-awesome/css/font-awesome.css";
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+@import
+'~bootstrap/scss/functions',
+'~bootstrap/scss/variables',
+'~bootstrap/scss/mixins',
+'~bootstrap/scss/print',
+'~bootstrap/scss/reboot',
+'~bootstrap/scss/type';
+
+body {
+  font-family: Circular,"Helvetica Neue",Helvetica,Arial,sans-serif!important;
+  font-size: 14px!important;
+  line-height: 1.43!important;
+  color: #484848!important;
+  background-color: #fff!important;
+  -webkit-font-smoothing: antialiased!important;
+}
