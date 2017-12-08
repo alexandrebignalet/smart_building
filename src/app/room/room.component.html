@@ -1,8 +1,8 @@
 <div class="room text-center">
   <div class="room-header fa-2x">{{room.name}}</div>
   <div class="room-block" >
-    <ngb-tabset #t="ngbTabset" [justify]="'justified'">
-      <ngb-tab id="tab-selectbyid1">
+    <ngb-tabset #t="ngbTabset" [justify]="'justified'" [activeId]="room.name">
+      <ngb-tab id="tab-selectbyid1{{room.name}}">
         <ng-template ngbTabTitle>
           <i class="fa fa-thermometer-half fa-1" aria-hidden="true"></i>
         </ng-template>
@@ -18,7 +18,7 @@
           </mat-slider>
         </ng-template>
       </ngb-tab>
-      <ngb-tab id="tab-selectbyid2">
+      <ngb-tab id="tab-selectbyid2{{room.name}}">
         <ng-template ngbTabTitle>
           <i class="fa fa-camera fa-1" aria-hidden="true"></i>
         </ng-template>
@@ -28,7 +28,7 @@
 
         </ng-template>
       </ngb-tab>
-      <ngb-tab id="tab-selectbyid3">
+      <ngb-tab id="tab-selectbyid3{{room.name}}">
         <ng-template ngbTabTitle>
           <i class="fa fa-lightbulb-o fa-1" aria-hidden="true"></i>
         </ng-template>
@@ -40,14 +40,16 @@
           <br>
         </ng-template>
       </ngb-tab>
-      <ngb-tab id="tab-selectbyid4">
+      <ngb-tab id="tab-selectbyid4{{room.name}}">
         <ng-template ngbTabTitle>
           <i class="fa fa-clock-o fa-1" aria-hidden="true"></i>
         </ng-template>
         <ng-template ngbTabContent>
-          <ngb-timepicker [(ngModel)]="time"></ngb-timepicker>
-          <hr>
-          <pre>Fermeture prévue à: {{time.hour}}h{{time.minute}}</pre>
+          <h3>People inside</h3>
+          <p>{{room.peopleInside}}</p>
+          <h3>Store</h3>
+          <p *ngIf="room.storesOpen">Ouverts</p>
+          <p *ngIf="!room.storesOpen">Fermés</p>
         </ng-template>
       </ngb-tab>
     </ngb-tabset>

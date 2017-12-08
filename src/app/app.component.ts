@@ -8,8 +8,7 @@ import {Office} from "./office.model";
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
-
+export class AppComponent implements OnInit {
   title = 'app';
   time: Date;
   config = {
@@ -36,6 +35,9 @@ export class AppComponent {
 
   constructor(private appService: AppService){
     this.office = appService.office;
-    this.time = appService.time;
+  }
+
+  ngOnInit(): void {
+
   }
 }

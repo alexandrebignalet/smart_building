@@ -1,10 +1,12 @@
 
-<router-outlet name="navbar"></router-outlet>
+<app-sidebar [office]="office"></app-sidebar>
+<div id="main">
+  <router-outlet name="navbar"></router-outlet>
 
-<hr class="separator"/>
-
-<swiper [config]="config" [(index)]="index">
-  <div *ngFor="let room of office.rooms">
-    <app-room [room]="room"></app-room>
-  </div>
-</swiper>
+  <hr class="separator"/>
+  <swiper [config]="config" [(index)]="index">
+    <div *ngFor="let room of office.rooms">
+      <app-room [room]="room"></app-room>
+    </div>
+  </swiper>
+</div>

@@ -3,10 +3,19 @@
     <div class="row">
       <div class="col-md-1 text-left">
         <div class="avatar">
-          <img alt="" src="http://lorempixel.com/100/100/people/9/">
+          <img alt="" src="http://static8.viadeo-static.com/Syeq_TNnMogB9ZtXvZi-FHDx7_k=/300x300/member/0021qo2d00qoqduy?ts=1389772334000">
         </div>
       </div>
-      <div class="col-md-5">
+      <div class="col-md-1">
+        <div class="navy-box">
+          <div class="row text-center">
+            <div class="col-md-12">
+              <i class="fa fa-cog fa-2x" (click)="openNav()"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
         <div class="nav-box">
           <div class="row">
             <div class="col-md-2">
@@ -19,7 +28,19 @@
           </div>
         </div>
       </div>
-      <div class="col-md-6 text-right">
+      <div class="col-md-2">
+        <div class="mid-box">
+          <div class="row text-center">
+            <div class="col-md-12">
+              <div class="fa-2x" (click)="addHours()" (contextmenu)="onRightClickHours($event)">
+                <span *ngIf="time?.minute > 10">{{ time?.hour }}:{{time?.minute}}</span>
+                <span *ngIf="time?.minute < 10">{{ time?.hour }}:0{{time?.minute}}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-5 text-right">
         <div class="right-box">
           <div class="row">
             <div class="col-md-8">
@@ -29,8 +50,8 @@
             <div class="col-md-2">
               <i class="wi wi-night-alt-rain-wind fa-4x"></i>
             </div>
-            <div class="col-md-2 fa-3x">
-              10°
+            <div class="col-md-2 fa-3x" (click)="addTemp()" (contextmenu)="onRightClickTemp($event)">
+              {{appService._extTemp}}°
             </div>
           </div>
         </div>

@@ -23,4 +23,5 @@ body {
   font-family: 'Muli', sans-serif !important;
   background: url('/assets/images/background.png') no-repeat;
   background-size: cover;
+  transition: background-color .5s;
 }

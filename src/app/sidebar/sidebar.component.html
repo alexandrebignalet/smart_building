@@ -1,0 +1,60 @@
+<div id="mySidenav" class="sidenav">
+  <div class="container">
+    <a href="javascript:void(0)" class="closebtn" (click)="closeNav()">&times;</a>
+
+    <h1>Programmation du bureau</h1>
+    <div class="row">
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-header">
+            Ouverture des bureaux
+          </div>
+          <div class="card-body text-left">
+            <mat-slide-toggle class="pull-right" [checked]="office.shouldBeOpennedAuto" [(ngModel)]="office.shouldBeOpennedAuto" [color]="'primary'"></mat-slide-toggle>
+
+            <ngb-timepicker *ngIf="!office.shouldBeOpennedAuto" [(ngModel)]="office.openningTime" [disabled]="office.shouldBeOpennedAuto" [spinners]="false"></ngb-timepicker>
+            <p *ngIf="office.shouldBeOpennedAuto">
+              {{office.openningTime.hour}} h
+              <span *ngIf="office.openningTime.minute < 10">0{{office.openningTime.minute}}</span>
+              <span *ngIf="office.openningTime.minute > 10">{{office.openningTime.minute}}</span>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-header">
+            Fermeture des bureaux
+          </div>
+          <div class="card-body text-left">
+            <mat-slide-toggle class="pull-right" [checked]="office.shouldBeClosedAuto" [(ngModel)]="office.shouldBeClosedAuto" [color]="'primary'"></mat-slide-toggle>
+
+            <ngb-timepicker *ngIf="!office.shouldBeClosedAuto" [(ngModel)]="office.closingTime" [disabled]="office.shouldBeClosedAuto" [spinners]="false"></ngb-timepicker>
+            <p *ngIf="office.shouldBeClosedAuto">
+              {{office.closingTime.hour}} h
+              <span *ngIf="office.closingTime.minute < 10">0{{office.closingTime.minute}}</span>
+              <span *ngIf="office.closingTime.minute > 10">{{office.closingTime.minute}}</span>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-header">
+            Vigipirate mode
+          </div>
+          <div class="card-body text-left">
+            <mat-slide-toggle class="pull-right" [checked]="office.vigipirate" [(ngModel)]="office.vigipirate" [color]="'primary'"></mat-slide-toggle>
+
+            <p *ngIf="!office.vigipirate">
+              Désactivé
+            </p>
+            <p *ngIf="office.vigipirate">
+              Activé
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+</div>

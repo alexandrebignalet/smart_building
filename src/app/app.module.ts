@@ -16,6 +16,7 @@ import { SwiperConfigInterface } from 'ngx-swiper-wrapper';
 import { AppComponent } from './app.component';
 import {AppService} from "./app.service";
 import { RoomComponent } from './room/room.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
 
 
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
@@ -27,7 +28,8 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
 @NgModule({
   declarations: [
     AppComponent,
-    RoomComponent
+    RoomComponent,
+    SidebarComponent
   ],
   imports: [
     SwiperModule,
@@ -40,7 +42,6 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     NavbarModule,
     AppRoutingModule
   ],
-  schemas: CUSTOM_ELEMENTS_SCHEMA,
   providers: [
     AppService,
     {

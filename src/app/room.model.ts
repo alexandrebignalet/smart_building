@@ -1,7 +1,5 @@
 
-import {Office} from "./office.model";
 export class Room {
-  public office: Office;
 
   constructor(
     public name: string,
@@ -34,9 +32,7 @@ export class Room {
   }
 
   public openStores(): void {
-    if ( this.temp < this.office.tooHighTemp && this.temp > this.office.tooLowTemp) {
       this.storesOpen = true;
       this.storesOpenness = 100;
-    }
   }
 }
