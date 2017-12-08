@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {AppService} from "./app.service";
+import {Office} from "./office.model";
 
 
 @Component({
@@ -7,8 +9,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+
   title = 'app';
-  time = {hour: 13, minute: 30};
+  time: Date;
   config = {
     speed: 600,
     slidesPerView: 3,
@@ -29,4 +32,10 @@ export class AppComponent {
     }
   };
   index = 1;
+  office: Office;
+
+  constructor(private appService: AppService){
+    this.office = appService.office;
+    this.time = appService.time;
+  }
 }

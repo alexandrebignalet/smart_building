@@ -1,0 +1,55 @@
+<div class="room text-center">
+  <div class="room-header fa-2x">{{room.name}}</div>
+  <div class="room-block" >
+    <ngb-tabset #t="ngbTabset" [justify]="'justified'">
+      <ngb-tab id="tab-selectbyid1">
+        <ng-template ngbTabTitle>
+          <i class="fa fa-thermometer-half fa-1" aria-hidden="true"></i>
+        </ng-template>
+        <ng-template ngbTabContent>
+          <span class="fa-2">{{room.temp}}°</span>
+          <br>
+          <mat-slider
+            class="example-margin"
+            [vertical]="false"
+            [thumb-label]="true"
+            [value]="room.thermostat"
+          >
+          </mat-slider>
+        </ng-template>
+      </ngb-tab>
+      <ngb-tab id="tab-selectbyid2">
+        <ng-template ngbTabTitle>
+          <i class="fa fa-camera fa-1" aria-hidden="true"></i>
+        </ng-template>
+        <ng-template ngbTabContent>
+
+
+
+        </ng-template>
+      </ngb-tab>
+      <ngb-tab id="tab-selectbyid3">
+        <ng-template ngbTabTitle>
+          <i class="fa fa-lightbulb-o fa-1" aria-hidden="true"></i>
+        </ng-template>
+        <ng-template ngbTabContent>
+          <br>
+          Lampe murale<mat-slide-toggle [checked]="room.areLightsOn"></mat-slide-toggle>
+          <hr>
+          Lampe murale<mat-slide-toggle [checked]="room.areLightsOn"></mat-slide-toggle>
+          <br>
+        </ng-template>
+      </ngb-tab>
+      <ngb-tab id="tab-selectbyid4">
+        <ng-template ngbTabTitle>
+          <i class="fa fa-clock-o fa-1" aria-hidden="true"></i>
+        </ng-template>
+        <ng-template ngbTabContent>
+          <ngb-timepicker [(ngModel)]="time"></ngb-timepicker>
+          <hr>
+          <pre>Fermeture prévue à: {{time.hour}}h{{time.minute}}</pre>
+        </ng-template>
+      </ngb-tab>
+    </ngb-tabset>
+  </div>
+</div>
