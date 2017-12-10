@@ -17,6 +17,7 @@ import { AppComponent } from './app.component';
 import {AppService} from "./app.service";
 import { RoomComponent } from './room/room.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
+import {MapComponent} from "./map/map.component";
 
 
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
@@ -29,7 +30,8 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
   declarations: [
     AppComponent,
     RoomComponent,
-    SidebarComponent
+    SidebarComponent,
+    MapComponent
   ],
   imports: [
     SwiperModule,
@@ -40,7 +42,8 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     BrowserAnimationsModule,
     NgbModule.forRoot(),
     NavbarModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MapComponent
   ],
   providers: [
     AppService,
