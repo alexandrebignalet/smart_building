@@ -96,10 +96,18 @@ export class Office {
   public getIndexById(id) {
       console.log(id);
       for (let i = 0 ; i < this.rooms.length ; i++ ) {
-          console.log(this.rooms[i].id);
           if (this.rooms[i].id === id) {
               return i;
           }
       }
   }
+
+    public getNameById(id) {
+        console.log(id);
+        for (let i = 0 ; i < this.rooms.length ; i++ ) {
+            if (this.rooms[i].id === id) {
+                return this.rooms[i].name;
+            }
+        }
+    }
 }

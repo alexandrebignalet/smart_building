@@ -11,7 +11,7 @@ import {Office} from "./office.model";
 export class AppComponent implements OnInit {
     title = 'app';
     time: Date;
-    lastHovered: '';
+    lastHovered: String;
     lastClicked: '';
     config = {
         speed: 600,
@@ -44,16 +44,12 @@ export class AppComponent implements OnInit {
     }
 
     onHoveredMapElement($event) {
-        this.lastHovered = $event;
+        this.lastHovered = this.office.getNameById($event);
     }
 
     onClickedMapElement($event) {
-        console.log($event);
         this.lastClicked = $event;
-
         this.index = this.office.getIndexById(this.lastClicked);
-
-        console.log(this.index);
     }
 
 }
