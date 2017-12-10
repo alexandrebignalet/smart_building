@@ -12,14 +12,12 @@ export class MapComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    if ( window.svgDocument == null ) {
 
-      //let svgDoc = evt.target.ownerDocument;
-      let colour = "green"
-      let rooms = document.getElementsByClassName("map-room");
-
-
-    }
-
+  }
+  mouseLeave(s) {
+    console.log(s);
+  }
+  mouseEnter(s) {
+    console.log(s);
   }
 }
