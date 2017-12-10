@@ -3,6 +3,7 @@ export class Room {
 
   constructor(
     public name: string,
+    public id: string,
     public temp: number,
     public thermostat: number,
     public storesOpen: boolean,

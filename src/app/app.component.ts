@@ -51,5 +51,8 @@ export class AppComponent implements OnInit {
     onClickedMapElement($event) {
         console.log($event);
         this.lastClicked = $event;
+        this.index = Math.floor(Math.random() * (0 - 3) + 3);
+
+        console.log(this.index);
     }
 }
