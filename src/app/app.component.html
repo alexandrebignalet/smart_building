@@ -10,7 +10,7 @@
     <div class="col-3">
       <h2>{{ lastHovered }}</h2>
       <ng-container>
-        <app-map-component (OnHovered)="onHoveredMapElment($event)"></app-map-component>
+        <app-map-component (OnClicked)="onClickedMapElement($event)" (OnHovered)="onHoveredMapElement($event)"></app-map-component>
       </ng-container>
     </div>
 
@@ -22,5 +22,4 @@
       </swiper>
     </div>
   </div>
-
 </div>

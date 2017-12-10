@@ -4,9 +4,11 @@ import {Directive, ElementRef, EventEmitter, HostListener, Output} from '@angula
   selector: '[mapRoom]'
 })
 export class MapRoomDirective {
-  @Output() OnTest = new EventEmitter<String>();
+  @Output() OnHovered = new EventEmitter<String>();
+  @Output() OnClicked = new EventEmitter<String>();
 
   svgElement: any;
+
 
   constructor(el: ElementRef) {
 
@@ -18,12 +20,16 @@ export class MapRoomDirective {
   }
 
   @HostListener('mouseenter') onMouseEnter() {
-    this.OnTest.emit(this.svgElement.nativeElement.id);
+    this.OnHovered.emit(this.svgElement.nativeElement.id);
     this.svgElement.nativeElement.setAttributeNS(null, 'style', 'fill:black');
   }
 
   @HostListener('mouseleave') onMouseLeave() {
     this.svgElement.nativeElement.setAttributeNS(null, 'style', 'fill:white');
+  }
+
+  @HostListener('click') onMouseClick() {
+    this.OnClicked.emit(this.svgElement.nativeElement.id);
   }
 
 

@@ -10,6 +10,7 @@ export class MapComponent implements OnInit {
 
 
   @Output() OnHovered = new EventEmitter<String>();
+  @Output() OnClicked = new EventEmitter<String>();
 
   constructor() {
   }
@@ -18,12 +19,18 @@ export class MapComponent implements OnInit {
 
   }
 
-  onmouseenter($event) {
-    console.log('Child : ' + $event);
+  onhovered($event) {
     if ($event) {
       this.OnHovered.emit($event);
     }
 
+  }
+
+  onclicked($event) {
+      console.log("Event clicked : " + $event);
+      if ($event) {
+          this.OnClicked.emit($event);
+      }
   }
 
 }
