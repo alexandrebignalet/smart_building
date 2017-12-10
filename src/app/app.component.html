@@ -4,9 +4,15 @@
   <router-outlet name="navbar"></router-outlet>
 
   <hr class="separator"/>
-  <swiper [config]="config" [(index)]="index">
-    <div *ngFor="let room of office.rooms">
-      <app-room [room]="room"></app-room>
+  <app-map-component></app-map-component>
+  <div class="row">
+    <div class="col">
+      <swiper [config]="config" [(index)]="index">
+        <div *ngFor="let room of office.rooms">
+          <app-room [room]="room"></app-room>
+        </div>
+      </swiper>
     </div>
-  </swiper>
+  </div>
+
 </div>

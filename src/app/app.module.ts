@@ -18,6 +18,7 @@ import {AppService} from "./app.service";
 import { RoomComponent } from './room/room.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import {MapComponent} from "./map/map.component";
+import {MapRoomDirective} from "./map/map-room.directive";
 
 
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
@@ -31,7 +32,8 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     AppComponent,
     RoomComponent,
     SidebarComponent,
-    MapComponent
+    MapComponent,
+    MapRoomDirective
   ],
   imports: [
     SwiperModule,
@@ -43,7 +45,7 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     NgbModule.forRoot(),
     NavbarModule,
     AppRoutingModule,
-    MapComponent
+
   ],
   providers: [
     AppService,
