@@ -7,18 +7,18 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 
 import {NavbarModule} from './navbar/navbar.module';
-import {AppRoutingModule} from "./app-routing.module";
-import {MatSlideToggleModule} from "@angular/material";
+import {AppRoutingModule} from './app-routing.module';
+import {MatSlideToggleModule} from '@angular/material';
 import { SwiperModule } from 'ngx-swiper-wrapper';
 import { SWIPER_CONFIG } from 'ngx-swiper-wrapper';
 import { SwiperConfigInterface } from 'ngx-swiper-wrapper';
 
 import { AppComponent } from './app.component';
-import {AppService} from "./app.service";
+import {AppService} from './app.service';
 import { RoomComponent } from './room/room.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
-import {MapComponent} from "./map/map.component";
-import {MapRoomDirective} from "./map/map-room.directive";
+import {MapComponent} from './map/map.component';
+import {MapRoomDirective} from './map/map-room.directive';
 
 
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {

@@ -9,7 +9,7 @@ import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 export class MapComponent implements OnInit {
 
 
-  @Output() onHovered = new EventEmitter<String>();
+  @Output() OnHovered = new EventEmitter<String>();
 
   constructor() {
   }
@@ -19,9 +19,9 @@ export class MapComponent implements OnInit {
   }
 
   onmouseenter($event) {
-    console.log("Child : " + $event);
+    console.log('Child : ' + $event);
     if ($event) {
-      this.onHovered.emit($event);
+      this.OnHovered.emit($event);
     }
 
   }
