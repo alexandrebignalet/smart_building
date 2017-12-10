@@ -11,6 +11,7 @@ import {Office} from "./office.model";
 export class AppComponent implements OnInit {
   title = 'app';
   time: Date;
+  lastHovered: '';
   config = {
     speed: 600,
     slidesPerView: 3,
@@ -39,5 +40,10 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
 
+  }
+
+  onHoveredMapElment($event) {
+    console.log($event);
+    this.lastHovered = $event;
   }
 }

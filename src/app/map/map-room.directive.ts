@@ -1,9 +1,10 @@
-import { Directive, ElementRef, HostListener } from '@angular/core';
+import {Directive, ElementRef, EventEmitter, HostListener, Output} from '@angular/core';
 
 @Directive({
   selector: '[mapRoom]'
 })
 export class MapRoomDirective {
+  @Output() OnTest = new EventEmitter<String>();
 
   svgElement: any;
 
@@ -17,6 +18,7 @@ export class MapRoomDirective {
   }
 
   @HostListener('mouseenter') onMouseEnter() {
+    this.OnTest.emit(this.svgElement.nativeElement.id);
     this.svgElement.nativeElement.setAttributeNS(null, 'style', 'fill:black');
   }
 

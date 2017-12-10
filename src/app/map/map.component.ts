@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 
 
 
@@ -8,16 +8,22 @@ import {Component, Input, OnInit} from '@angular/core';
 })
 export class MapComponent implements OnInit {
 
+
+  @Output() onHovered = new EventEmitter<String>();
+
   constructor() {
   }
 
   ngOnInit(): void {
 
   }
-  mouseLeave(s) {
-    console.log(s);
+
+  onmouseenter($event) {
+    console.log("Child : " + $event);
+    if ($event) {
+      this.onHovered.emit($event);
+    }
+
   }
-  mouseEnter(s) {
-    console.log(s);
-  }
+
 }
