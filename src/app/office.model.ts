@@ -90,6 +90,16 @@ export class Office {
     this.rooms.forEach((room: Room) => {
       room.openStores();
       room.switchLightsOn();
-    })
+    });
+  }
+
+  public getIndexById(id) {
+      console.log(id);
+      for (let i = 0 ; i < this.rooms.length ; i++ ) {
+          console.log(this.rooms[i].id);
+          if (this.rooms[i].id === id) {
+              return i;
+          }
+      }
   }
 }

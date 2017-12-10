@@ -44,15 +44,16 @@ export class AppComponent implements OnInit {
     }
 
     onHoveredMapElement($event) {
-        console.log($event);
         this.lastHovered = $event;
     }
 
     onClickedMapElement($event) {
         console.log($event);
         this.lastClicked = $event;
-        this.index = Math.floor(Math.random() * (0 - 3) + 3);
+
+        this.index = this.office.getIndexById(this.lastClicked);
 
         console.log(this.index);
     }
+
 }
