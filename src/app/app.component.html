@@ -34,6 +34,6 @@
 </div>
 <div class="row m-3">
     <div class="col">
-        <app-dashboard-component></app-dashboard-component>
+        <app-dashboard-component *ngIf="lastHoveredRoom" [roomName]="lastHoveredRoom.name"></app-dashboard-component>
     </div>
 </div>

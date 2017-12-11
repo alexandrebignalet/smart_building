@@ -1,10 +1,12 @@
-import {Component, ViewChild} from '@angular/core';
+import {Component, Input} from '@angular/core';
 
 @Component({
     selector: 'app-dashboard-component',
     templateUrl: './dashboard.component.html',
 })
 export class DashboardComponent  {
+
+    @Input() roomName;
 
     constructor() {
         console.log('Dashboard component const');
