@@ -7,6 +7,7 @@ import {Room} from "../domain_logic/room.model";
     styleUrls: ['./room.component.scss']
 })
 export class RoomComponent implements OnInit, OnChanges {
+
     ngOnChanges(changes: SimpleChanges): void {
     }
 
