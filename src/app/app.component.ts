@@ -1,7 +1,7 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {AppService} from "./app.service";
-import {Office} from "./office.model";
-import {Room} from "./room.model";
+import {Component, OnInit} from '@angular/core';
+import {AppService} from "./domain_logic/app.service";
+import {Office} from "./domain_logic/office.model";
+import {Room} from "./domain_logic/room.model";
 
 
 @Component({
