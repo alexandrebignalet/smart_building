@@ -1,7 +1,7 @@
 <div class="room text-center">
     <div class="room-header fa-2x">{{room.name}}</div>
     <div class="room-block">
-        <ngb-tabset #t="ngbTabset" [justify]="'justified'" [activeId]="room.name">
+        <ngb-tabset (tabChange)="tabEvent($event)" #t="ngbTabset" [justify]="'justified'" [activeId]="room.name">
             <ngb-tab id="tab-selectbyid1{{room.name}}">
                 <ng-template ngbTabTitle>
                     <i class="fa fa-thermometer-half fa-1" aria-hidden="true"></i>

@@ -1,10 +1,10 @@
-import {Component, Input} from '@angular/core';
+import {Component, Input, OnChanges, SimpleChanges} from '@angular/core';
 
 @Component({
     selector: 'app-dashboard-component',
     templateUrl: './dashboard.component.html',
 })
-export class DashboardComponent  {
+export class DashboardComponent implements OnChanges {
 
     @Input() roomName;
 
@@ -15,6 +15,11 @@ export class DashboardComponent  {
 
     consommation: any;
     prevision: any;
+
+    ngOnChanges(changes: SimpleChanges): void {
+        this.initValues();
+    }
+
 
     initValues() {
         const facteurPrevision = 4;
