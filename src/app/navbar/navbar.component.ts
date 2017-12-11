@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {AppService} from "../app.service";
+import {AppService} from "../domain_logic/app.service";
 
 @Component({
   selector: 'app-navbar',

@@ -1,60 +1,56 @@
 .avatar img {
-  width: 100px;
-  height: 100px;
-  max-width: 100px;
-  max-height: 100px;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  border-radius: 50%;
-  border: 5px solid #00ffc7;
-  box-shadow: 0px 2px 9px 0px rgba(0, 0, 0, 0.55);
-}
-
-.navcontainer {
-  padding:2%;
+    width: 100px;
+    height: 100px;
+    max-width: 100px;
+    max-height: 100px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    border: 5px solid #00ffc7;
+    box-shadow: 0px 2px 9px 0px rgba(0, 0, 0, 0.55);
 }
 
 .nav-box {
-  margin-top: 8%;
+    margin-top: 8%;
 }
 
 .mid-box {
-  margin-top:10%;
-  color:white;
+    margin-top: 10%;
+    color: white;
 }
 
 .navy-box {
-  margin-top: 30%;
-  color: #00ffc7;
+    margin-top: 30%;
+    color: #00ffc7;
 
 }
 
 .nav-box i {
-  color: #00ffc7;
+    color: #00ffc7;
 }
 
 .alert-box {
-  margin-top: -1%;
+    margin-top: -1%;
 }
 
 .alert-box-title {
-  color: #00ffc7;
+    color: #00ffc7;
 }
 
 .alert-box-content {
-  color: white;
+    color: white;
 }
 
 .right-box {
-  color:white;
-  padding-top: 2%;
+    color: white;
+    padding-top: 2%;
 }
 
 .right-box i {
-  color:white;
+    color: white;
 }
 
 .city-box-content {
-  color:#c3bcbc;
-  font-size: 65%;
+    color: #c3bcbc;
+    font-size: 65%;
 }

@@ -52,9 +52,77 @@
             <p *ngIf="office.vigipirate">
               Activé
             </p>
+
+            <div *ngIf="!office.vigipirate">
+              <div class="form-group">
+                  <label class="form-control-label">Ouverture</label>
+                  <ngb-timepicker *ngIf="!office.vigipirate" [(ngModel)]="office.vigipirateOpenningTime" [disabled]="office.vigipirate" [spinners]="false"></ngb-timepicker>
+              </div>
+              <div class="form-group">
+                  <label class="form-control-label">Fermeture</label>
+                  <ngb-timepicker *ngIf="!office.vigipirate" [(ngModel)]="office.vigipirateClosingTime" [disabled]="office.vigipirate" [spinners]="false"></ngb-timepicker>
+
+              </div>
+            </div>
+            <div *ngIf="office.vigipirate">
+              <div class="form-group">
+                  <label class="form-control-label">Ouverture</label>
+                  <p class="pull-right">
+                      {{office.vigipirateOpenningTime.hour}} h
+                      <span *ngIf="office.vigipirateOpenningTime.minute < 10">0{{office.vigipirateOpenningTime.minute}}</span>
+                      <span *ngIf="office.vigipirateOpenningTime.minute > 10">{{office.vigipirateOpenningTime.minute}}</span>
+                  </p>
+              </div>
+              <div class="form-group">
+                  <label class="form-control-label">Fermeture</label>
+                  <p class="pull-right">
+                      {{office.vigipirateClosingTime.hour}} h
+                      <span *ngIf="office.vigipirateClosingTime.minute < 10">0{{office.vigipirateClosingTime.minute}}</span>
+                      <span *ngIf="office.vigipirateClosingTime.minute > 10">{{office.vigipirateClosingTime.minute}}</span>
+                  </p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    Conservation de la chaleur/fraîcheur
+                </div>
+                <div class="card-body text-left">
+                    <mat-slide-toggle class="pull-right" [checked]="office.shouldBeClosedAutoDueToTemp" [(ngModel)]="office.shouldBeClosedAutoDueToTemp" [color]="'primary'"></mat-slide-toggle>
+
+                    <p *ngIf="!office.shouldBeClosedAutoDueToTemp">
+                        Désactivé
+                    </p>
+                    <p *ngIf="office.shouldBeClosedAutoDueToTemp">
+                        Activé
+                    </p>
+                    <div *ngIf="!office.shouldBeClosedAutoDueToTemp">
+                        <div class="form-group">
+                            <label class="form-control-label">Max</label>
+                            <input class="form-control pull-right" [(ngModel)]="office.tooHighTemp" type="number" />
+                        </div>
+                        <div class="form-group">
+                            <label class="form-control-label">Min</label>
+                            <input class="form-control pull-right" [(ngModel)]="office.tooLowTemp" type="number" />
+                        </div>
+                    </div>
+                    <div *ngIf="office.shouldBeClosedAutoDueToTemp">
+                        <div class="form-group">
+                            <label class="form-control-label">Max</label>
+                            <p class="pull-right">{{office.tooHighTemp}}°C</p>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-control-label">Min</label>
+                            <p class="pull-right">{{office.tooLowTemp}}°C</p>
+                        </div>
+                </div>
+            </div>
+        </div>
     </div>
 
 </div>

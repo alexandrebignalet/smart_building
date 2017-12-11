@@ -1,5 +1,5 @@
 import {Component, Input, OnInit, Output} from '@angular/core';
-import {Office} from "../office.model";
+import {Office} from "../domain_logic/office.model";
 
 @Component({
   selector: 'app-sidebar',

@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import {CUSTOM_ELEMENTS_SCHEMA, NgModule} from '@angular/core';
+import { NgModule} from '@angular/core';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from '@angular/forms';
 import {MatSliderModule} from '@angular/material/slider';
@@ -14,11 +14,12 @@ import { SWIPER_CONFIG } from 'ngx-swiper-wrapper';
 import { SwiperConfigInterface } from 'ngx-swiper-wrapper';
 
 import { AppComponent } from './app.component';
-import {AppService} from './app.service';
+import {AppService} from './domain_logic/app.service';
 import { RoomComponent } from './room/room.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import {MapComponent} from './map/map.component';
 import {MapRoomDirective} from './map/map-room.directive';
+import {OfficeFactory} from "./domain_logic/office.factory";
 
 
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
@@ -49,6 +50,7 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
   ],
   providers: [
     AppService,
+    OfficeFactory,
     {
       provide: SWIPER_CONFIG,
       useValue: DEFAULT_SWIPER_CONFIG
