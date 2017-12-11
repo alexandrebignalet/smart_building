@@ -42,9 +42,16 @@ export class Room {
         return this.peopleInside > 0;
     }
 
-    public lightsAreOn() {
+    public areLightsOn() {
         for (let i = 0 ; i < this.lights.length; i++) {
             if(!this.lights[i].isOn) return false;
+        }
+        return true;
+    }
+
+    public areStoresOpen() {
+        for (let i = 0 ; i < this.stores.length; i++) {
+            if(!this.stores[i].isOpen) return false;
         }
         return true;
     }
@@ -61,7 +68,7 @@ export class Room {
             this.stores[i].isOpen = false;
             this.stores[i].openness = 0;
         }
-        if(!this.lightsAreOn()) this.switchLightsOn();
+        if(!this.areLightsOn()) this.switchLightsOn();
     }
 
     public switchLightsOn(): void {
