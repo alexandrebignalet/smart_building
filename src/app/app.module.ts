@@ -22,6 +22,8 @@ import {MapComponent} from './map/map.component';
 import {MapRoomDirective} from './map/map-room.directive';
 import {OfficeFactory} from "./domain_logic/office.factory";
 import {HoverInfoComponent} from "./hover-info/hover-info.component";
+import {DashboardComponent} from "./dashboard/dashboard.component";
+import {ChartsModule} from "ng2-charts";
 
 
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
@@ -31,35 +33,35 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
 
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    RoomComponent,
-    SidebarComponent,
-    MapComponent,
-    MapRoomDirective,
-    HoverInfoComponent
-  ],
-  imports: [
-    SwiperModule,
-    BrowserModule,
-    FormsModule,
-    MatSliderModule,
-    MatSlideToggleModule,
-    BrowserAnimationsModule,
-    NgbModule.forRoot(),
-    NavbarModule,
-    AppRoutingModule,
+    declarations: [
+        AppComponent,
+        RoomComponent,
+        SidebarComponent,
+        MapComponent,
+        MapRoomDirective,
+        HoverInfoComponent,
+    DashboardComponent],
+    imports: [
+        SwiperModule,
+        BrowserModule,
+        FormsModule,
+        MatSliderModule,
+        MatSlideToggleModule,
+        BrowserAnimationsModule,
+        NgbModule.forRoot(),
+        NavbarModule,
+        AppRoutingModule,
+        ChartsModule
 
-  ],
-  providers: [
-    AppService,
-    OfficeFactory,
-    {
-      provide: SWIPER_CONFIG,
-      useValue: DEFAULT_SWIPER_CONFIG
-    }
-  ],
-  bootstrap: [AppComponent]
+  ],  providers: [
+        AppService,
+        OfficeFactory,
+        {
+            provide: SWIPER_CONFIG,
+            useValue: DEFAULT_SWIPER_CONFIG
+        }
+    ],
+    bootstrap: [AppComponent]
 })
 export class AppModule {
 }
