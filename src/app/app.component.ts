@@ -45,7 +45,6 @@ export class AppComponent implements OnInit {
     }
 
     public onHoveredMapElement($event) {
-        console.log(this.office);
         if(!this.office) return;
         this.lastHoveredRoom = this.office.getRoomById($event);
     }

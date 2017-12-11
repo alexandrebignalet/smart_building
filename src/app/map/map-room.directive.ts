@@ -14,26 +14,19 @@ export class MapRoomDirective {
 
     this.svgElement = el;
 
-    console.log(el.nativeElement.setAttributeNS(null, 'style', 'fill:white'));
-
-    el.nativeElement.setAttributeNS(null, 'opacity', '0.7');
+    this.svgElement.nativeElement.classList.add("back");
   }
 
   @HostListener('mouseenter') onMouseEnter() {
     this.OnHovered.emit(this.svgElement.nativeElement.id);
-    this.svgElement.nativeElement.setAttributeNS(null, 'style', 'fill:black');
+    this.svgElement.nativeElement.classList.add("highlight");
   }
 
   @HostListener('mouseleave') onMouseLeave() {
-    this.svgElement.nativeElement.setAttributeNS(null, 'style', 'fill:white');
+      this.svgElement.nativeElement.classList.remove("highlight");
   }
 
   @HostListener('click') onMouseClick() {
     this.OnClicked.emit(this.svgElement.nativeElement.id);
-  }
-
-
-  private highlight(color: string) {
-
   }
 }

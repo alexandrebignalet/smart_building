@@ -82,11 +82,29 @@ export class Office {
         return this._time;
     }
 
+    public isDuringOpenningHours(): boolean {
+
+        if ( this.time.hour >= this.openningTime.hour && this.time.hour <= this.closingTime.hour) {
+
+            if( this.time.hour === this.openningTime.hour) {
+                return this.time.minute >= this.openningTime.minute;
+            }
+
+            if ( this.time.hour === this.closingTime.hour ) {
+                return this.time.minute <= this.closingTime.minute;
+            }
+
+            return true;
+        }
+
+        return false;
+    }
+
     public checkCurrentTime() {
-        if ((this.time.hour >= this.closingTime.hour && this.time.minute >= this.closingTime.minute) && this.shouldBeClosedAuto) {
+        if (!this.isDuringOpenningHours() && this.shouldBeClosedAuto) {
             this.isOpen = false;
             this.closeOffice();
-        } else if (!this.isCloseDueToTemp && !this.isOpen) {
+        } else if (!this.isCloseDueToTemp && !this.isOpen && this.shouldBeOpennedAuto) {
             this.isOpen = true;
             this.openOffice();
         }

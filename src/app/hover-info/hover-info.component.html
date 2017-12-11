@@ -1,25 +1,24 @@
-
-<div class="card" style="background-color:rgba(255, 255, 255, 0.7)">
-    <div class="card-header">
-        {{ room.name }}
-    </div>
-    <div class="card-body" style="background-color:rgba(0, 0, 0, 0.1)">
+<div class="hover-header">
+    {{ room.name }}
+</div>
+<div class="card" style="background-color: rgba(255, 255, 255, 0.7);">
+    <div class="card-body">
         <div class="row" >
-            <div class="col text-center">
-                <i class="fa fa-lightbulb-o" aria-hidden="true"></i>
+            <div class="col text-center" *ngIf="room.lights.length > 0">
+                <a class="fa fa-lightbulb-o" aria-hidden="true"></a>
                 <span>{{ room.areLightsOn() ? 'Allumées' : 'Eteintes'}}</span>
             </div>
-            <div class="col text-center">
-                <i class="fa fa-window-maximize" aria-hidden="true"></i>
+            <div class="col text-center" *ngIf="room.stores.length > 0" >
+                <a class="fa fa-window-maximize" aria-hidden="true"></a>
                 <span>{{ room.areStoresOpen() ? 'Ouverts' : 'Fermés' }}</span>
             </div>
             <div class="col text-center">
-                <i class="fa fa-thermometer-three-quarters" aria-hidden="true"></i>
+                <a class="fa fa-thermometer-three-quarters" aria-hidden="true"></a>
                 <span>{{ room.temp + '°C'}}</span>
             </div>
             <div class="col text-center">
                 <i *ngIf="false" class="fa fa-user-times" aria-hidden="true"></i>
-                <i class="fa fa-user-o" aria-hidden="true"></i>
+                <a class="fa fa-user-o" aria-hidden="true"></a>
                 <span>{{ room.peopleInside }}</span>
             </div>
         </div>
