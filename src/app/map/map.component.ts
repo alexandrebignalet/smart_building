@@ -5,6 +5,7 @@ import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 @Component({
   selector: 'app-map-component',
   templateUrl: './map.component.html',
+  styleUrls: ['./map.scss']
 })
 export class MapComponent implements OnInit {
 
