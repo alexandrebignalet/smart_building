@@ -17,8 +17,8 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col">
-                    <app-hover-info-component></app-hover-info-component>
+                <div class="col ml-4">
+                    <app-hover-info-component *ngIf="lastHoveredRoom" [room]="lastHoveredRoom"></app-hover-info-component>
                 </div>
             </div>
 

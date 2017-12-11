@@ -102,11 +102,11 @@ export class Office {
       }
   }
 
-    public getNameById(id) {
+    public getRoomById(id) {
         console.log(id);
         for (let i = 0 ; i < this.rooms.length ; i++ ) {
             if (this.rooms[i].id === id) {
-                return this.rooms[i].name;
+                return this.rooms[i];
             }
         }
     }

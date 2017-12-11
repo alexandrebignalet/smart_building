@@ -1,6 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {AppService} from "./app.service";
 import {Office} from "./office.model";
+import {Room} from "./room.model";
 
 
 @Component({
@@ -11,7 +12,7 @@ import {Office} from "./office.model";
 export class AppComponent implements OnInit {
     title = 'app';
     time: Date;
-    lastHovered: String;
+    lastHoveredRoom: Room;
     lastClicked: '';
     config = {
         speed: 600,
@@ -44,7 +45,7 @@ export class AppComponent implements OnInit {
     }
 
     onHoveredMapElement($event) {
-        this.lastHovered = this.office.getNameById($event);
+        this.lastHoveredRoom = this.office.getRoomById($event);
     }
 
     onClickedMapElement($event) {
