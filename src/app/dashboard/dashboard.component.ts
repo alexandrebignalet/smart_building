@@ -19,11 +19,11 @@ export class DashboardComponent  {
         this.lineChartData = [];
         this.prevision = {
             data: [],
-            label: 'Prevision'
+            label: 'Prevision (kWh)'
         };
         this.consommation = {
             data: [],
-            label: 'Consommation'
+            label: 'Consommation (kWh)'
         };
 
         for (let i = 0 ; i < 7 ; i++) {
