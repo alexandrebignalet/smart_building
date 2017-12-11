@@ -1,7 +1,7 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {AppService} from "./app.service";
-import {Office} from "./office.model";
-import {Room} from "./room.model";
+import {Component, OnInit} from '@angular/core';
+import {AppService} from "./domain_logic/app.service";
+import {Office} from "./domain_logic/office.model";
+import {Room} from "./domain_logic/room.model";
 
 
 @Component({
@@ -44,11 +44,13 @@ export class AppComponent implements OnInit {
 
     }
 
-    onHoveredMapElement($event) {
+    public onHoveredMapElement($event) {
+        console.log(this.office);
+        if(!this.office) return;
         this.lastHoveredRoom = this.office.getRoomById($event);
     }
 
-    onClickedMapElement($event) {
+    public onClickedMapElement($event) {
         this.lastClicked = $event;
         this.index = this.office.getIndexById(this.lastClicked);
     }

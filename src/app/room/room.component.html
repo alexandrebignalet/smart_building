@@ -1,57 +1,56 @@
 <div class="room text-center">
-  <div class="room-header fa-2x">{{room.name}}</div>
-  <div class="room-block" >
-    <ngb-tabset #t="ngbTabset" [justify]="'justified'" [activeId]="room.name">
-      <ngb-tab id="tab-selectbyid1{{room.name}}">
-        <ng-template ngbTabTitle>
-          <i class="fa fa-thermometer-half fa-1" aria-hidden="true"></i>
-        </ng-template>
-        <ng-template ngbTabContent>
-          <span class="fa-2">{{room.temp}}°</span>
-          <br>
-          <mat-slider
-            class="example-margin"
-            [vertical]="false"
-            [thumb-label]="true"
-            [value]="room.thermostat"
-          >
-          </mat-slider>
-        </ng-template>
-      </ngb-tab>
-      <ngb-tab id="tab-selectbyid2{{room.name}}">
-        <ng-template ngbTabTitle>
-          <i class="fa fa-camera fa-1" aria-hidden="true"></i>
-        </ng-template>
-        <ng-template ngbTabContent>
+    <div class="room-header fa-2x">{{room.name}}</div>
+    <div class="room-block">
+        <ngb-tabset #t="ngbTabset" [justify]="'justified'" [activeId]="room.name">
+            <ngb-tab id="tab-selectbyid1{{room.name}}">
+                <ng-template ngbTabTitle>
+                    <i class="fa fa-thermometer-half fa-1" aria-hidden="true"></i>
+                </ng-template>
+                <ng-template ngbTabContent>
+                    <span class="fa-2">{{room.temp}}°</span>
+                    <br>
+                    <mat-slider
+                        class="example-margin"
+                        [vertical]="false"
+                        [thumb-label]="true"
+                        [value]="room.thermostat"
+                    >
+                    </mat-slider>
+                </ng-template>
+            </ngb-tab>
+            <ngb-tab id="tab-selectbyid2{{room.name}}">
+                <ng-template ngbTabTitle>
+                    <i class="fa fa-camera fa-1" aria-hidden="true"></i>
+                </ng-template>
+                <ng-template ngbTabContent>
 
 
-
-        </ng-template>
-      </ngb-tab>
-      <ngb-tab id="tab-selectbyid3{{room.name}}">
-        <ng-template ngbTabTitle>
-          <i class="fa fa-lightbulb-o fa-1" aria-hidden="true"></i>
-        </ng-template>
-        <ng-template ngbTabContent>
-          <br>
-          Lampe murale<mat-slide-toggle [checked]="room.areLightsOn"></mat-slide-toggle>
-          <hr>
-          Lampe murale<mat-slide-toggle [checked]="room.areLightsOn"></mat-slide-toggle>
-          <br>
-        </ng-template>
-      </ngb-tab>
-      <ngb-tab id="tab-selectbyid4{{room.name}}">
-        <ng-template ngbTabTitle>
-          <i class="fa fa-clock-o fa-1" aria-hidden="true"></i>
-        </ng-template>
-        <ng-template ngbTabContent>
-          <h3>People inside</h3>
-          <p>{{room.peopleInside}}</p>
-          <h3>Store</h3>
-          <p *ngIf="room.storesOpen">Ouverts</p>
-          <p *ngIf="!room.storesOpen">Fermés</p>
-        </ng-template>
-      </ngb-tab>
-    </ngb-tabset>
-  </div>
+                </ng-template>
+            </ngb-tab>
+            <ngb-tab id="tab-selectbyid3{{room.name}}" *ngIf="room.lights.length > 0">
+                <ng-template ngbTabTitle>
+                    <i class="fa fa-lightbulb-o fa-1" aria-hidden="true"></i>
+                </ng-template>
+                <ng-template ngbTabContent>
+                    <h3>Lumières</h3>
+                    <div *ngFor="let light of room.lights">
+                        <mat-slide-toggle [checked]="light.isOn" [(ngModel)]="light.isOn"></mat-slide-toggle>
+                    </div>
+                </ng-template>
+            </ngb-tab>
+            <ngb-tab id="tab-selectbyid4{{room.name}}">
+                <ng-template ngbTabTitle>
+                    <i class="fa fa-clock-o fa-1" aria-hidden="true"></i>
+                </ng-template>
+                <ng-template ngbTabContent>
+                    <h3>People inside</h3>
+                    <p>{{room.peopleInside}}</p>
+                    <h3 *ngIf="room.stores.length > 0">Stores</h3>
+                    <div *ngFor="let store of room.stores">
+                        <mat-slide-toggle [checked]="store.isOpen" [(ngModel)]="store.isOpen"></mat-slide-toggle>
+                    </div>
+                </ng-template>
+            </ngb-tab>
+        </ngb-tabset>
+    </div>
 </div>
