@@ -25,7 +25,7 @@
                 <ng-template ngbTabContent>
                     <div class="video">
                         <video width="100%"  (click)="toggleVideo()" #videoPlayer>
-                            <source src="/assets/videos/videoplayback.mp4" type="video/mp4" />
+                            <source src="{{videoLink}}" type="video/mp4" />
                             Browser not supported
                         </video>
                     </div>
