@@ -19,8 +19,14 @@ export class RoomComponent implements OnInit {
         console.log(this.room);
     }
 
-    tabEvent($event) {
-        console.log($event);
+    tabChangeEvent($event) {
+        const splitRes = $event.nextId.split('-');
+        if (splitRes[1] === 'video') {
+            setTimeout(() => {
+                this.videoplayer.nativeElement.play();
+            }, 300);
+
+        }
     }
 
 

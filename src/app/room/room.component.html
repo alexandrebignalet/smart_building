@@ -1,7 +1,7 @@
 <div class="room text-center">
     <div class="room-header fa-2x">{{room.name}}</div>
     <div class="room-block">
-        <ngb-tabset (tabChange)="tabEvent($event)" #t="ngbTabset" [justify]="'justified'" [activeId]="room.name">
+        <ngb-tabset (tabChange)="tabChangeEvent($event)" #t="ngbTabset" [justify]="'justified'" [activeId]="room.name">
             <ngb-tab id="tab-selectbyid1{{room.name}}">
                 <ng-template ngbTabTitle>
                     <i class="fa fa-thermometer-half fa-1" aria-hidden="true"></i>
@@ -18,7 +18,7 @@
                     </mat-slider>
                 </ng-template>
             </ngb-tab>
-            <ngb-tab id="tab-selectbyid2{{room.name}}">
+            <ngb-tab id="tab-video-{{room.name}}">
                 <ng-template ngbTabTitle>
                     <i class="fa fa-camera fa-1" aria-hidden="true"></i>
                 </ng-template>
