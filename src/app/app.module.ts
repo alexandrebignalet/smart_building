@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule} from '@angular/core';
+import {ChangeDetectorRef, NgModule} from '@angular/core';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from '@angular/forms';
 
@@ -40,7 +40,8 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
         MapComponent,
         MapRoomDirective,
         HoverInfoComponent,
-    DashboardComponent],
+        DashboardComponent
+    ],
     imports: [
         SwiperModule,
         BrowserModule,
@@ -53,7 +54,8 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
         AppRoutingModule,
         ChartsModule
 
-  ],  providers: [
+    ],
+    providers: [
         AppService,
         OfficeFactory,
         {

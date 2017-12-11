@@ -1,15 +1,19 @@
-import {Injectable} from "@angular/core";
+import {ChangeDetectionStrategy, ChangeDetectorRef, Injectable} from "@angular/core";
 import {Office} from "./office.model";
 import {OfficeFactory} from "./office.factory";
+import {Subject} from "rxjs";
 
 @Injectable()
 export class AppService {
     public office: Office;
     public _extTemp: number;
     public officeFactory = new OfficeFactory();
+    public scenarChoosen = 0;
+
+    public officeChange: Subject<Office> = new Subject<Office>();
 
     constructor() {
-        this.changeScenario(10, 0);
+        this.changeScenario();
     }
 
     addTemp() {
@@ -22,8 +26,11 @@ export class AppService {
         this.office.checkExtTemp(this._extTemp);
     }
 
-    changeScenario(temp: number, number: number): void {
-        this._extTemp = temp;
-        this.office = this.officeFactory.createOfficeScenario(number);
+    changeScenario(): void {
+        this.scenarChoosen = this.scenarChoosen === 0 ? 1 : 0;
+        this._extTemp = Math.round(Math.random()*15);
+        this.office = this.officeFactory.createOfficeScenario(this.scenarChoosen);
+        console.log(this.office);
+        this.officeChange.next(this.office);
     }
 }

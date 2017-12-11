@@ -1,15 +1,17 @@
-import {Component, Input, OnInit, ViewChild} from '@angular/core';
+import { Component, Input, OnChanges, OnInit, SimpleChanges, ViewChild} from '@angular/core';
 import {Room} from "../domain_logic/room.model";
-import {NgbTabset} from "@ng-bootstrap/ng-bootstrap";
 
 @Component({
     selector: 'app-room',
     templateUrl: './room.component.html',
     styleUrls: ['./room.component.scss']
 })
-export class RoomComponent implements OnInit {
+export class RoomComponent implements OnInit, OnChanges {
+    ngOnChanges(changes: SimpleChanges): void {
+    }
 
     @Input() room: Room;
+
     @ViewChild('videoPlayer') videoplayer: any;
 
     videoLink: String;
@@ -39,7 +41,6 @@ export class RoomComponent implements OnInit {
 
         return link;
     }
-
 
 
     toggleVideo(event: any) {

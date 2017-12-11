@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {AppService} from "./domain_logic/app.service";
 import {Office} from "./domain_logic/office.model";
 import {Room} from "./domain_logic/room.model";
+import {Subject, Subscription} from "rxjs";
 
 
 @Component({
@@ -35,9 +36,13 @@ export class AppComponent implements OnInit {
     };
     index = 1;
     office: Office;
+    _subscription: Subscription;
 
     constructor(private appService: AppService) {
         this.office = appService.office;
+        this._subscription = appService.officeChange.subscribe((office:Office) => {
+            this.office = office;
+        });
     }
 
     ngOnInit(): void {
