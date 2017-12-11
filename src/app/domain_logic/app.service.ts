@@ -6,8 +6,9 @@ import {OfficeFactory} from "./office.factory";
 export class AppService {
     public office: Office;
     public _extTemp: number;
+    public officeFactory = new OfficeFactory();
 
-    constructor(public officeFactory: OfficeFactory) {
+    constructor() {
         this.changeScenario(10, 0);
     }
 

@@ -31,34 +31,35 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
 
 
 @NgModule({
-    declarations: [
-        AppComponent,
-        RoomComponent,
-        SidebarComponent,
-        MapComponent,
-        MapRoomDirective,
-        HoverInfoComponent
-    ],
-    imports: [
-        SwiperModule,
-        BrowserModule,
-        FormsModule,
-        MatSliderModule,
-        MatSlideToggleModule,
-        BrowserAnimationsModule,
-        NgbModule.forRoot(),
-        NavbarModule,
-        AppRoutingModule,
-    ],
-    providers: [
-        AppService,
-        OfficeFactory,
-        {
-            provide: SWIPER_CONFIG,
-            useValue: DEFAULT_SWIPER_CONFIG
-        }
-    ],
-    bootstrap: [AppComponent]
+  declarations: [
+    AppComponent,
+    RoomComponent,
+    SidebarComponent,
+    MapComponent,
+    MapRoomDirective,
+    HoverInfoComponent
+  ],
+  imports: [
+    SwiperModule,
+    BrowserModule,
+    FormsModule,
+    MatSliderModule,
+    MatSlideToggleModule,
+    BrowserAnimationsModule,
+    NgbModule.forRoot(),
+    NavbarModule,
+    AppRoutingModule,
+
+  ],
+  providers: [
+    AppService,
+    OfficeFactory,
+    {
+      provide: SWIPER_CONFIG,
+      useValue: DEFAULT_SWIPER_CONFIG
+    }
+  ],
+  bootstrap: [AppComponent]
 })
 export class AppModule {
 }
