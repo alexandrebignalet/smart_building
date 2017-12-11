@@ -10,6 +10,7 @@ export class Office {
     public addedHours = 0;
     public isOpen = false;
     public isCloseDueToTemp = false;
+    public intrusion = { state: false, roomsName: []};
 
     public vigipirateOpenningTime = {hour: 8, minute: 15};
     public vigipirateClosingTime = {hour: 18, minute: 0};
@@ -42,6 +43,8 @@ export class Office {
     }
 
     public checkExtTemp(temp) {
+        if(!this.shouldBeClosedAutoDueToTemp) return;
+
         if (temp > this.tooHighTemp || temp < this.tooLowTemp) {
             this.rooms.forEach((room: Room) => {
                 this.isCloseDueToTemp = true;
@@ -101,12 +104,34 @@ export class Office {
     }
 
     public checkCurrentTime() {
-        if (!this.isDuringOpenningHours() && this.shouldBeClosedAuto) {
-            this.isOpen = false;
-            this.closeOffice();
+        if (!this.isDuringOpenningHours()) {
+            if(this.shouldBeClosedAuto && this.isOpen) {
+                this.isOpen = false;
+                this.closeOffice();
+            }
         } else if (!this.isCloseDueToTemp && !this.isOpen && this.shouldBeOpennedAuto) {
             this.isOpen = true;
             this.openOffice();
+        }
+
+        this.checkIntrusion();
+    }
+
+    checkIntrusion(): void {
+        if(this.isOpen) {
+            this.intrusion.state = false;
+            this.intrusion.roomsName = [];
+            return;
+        }
+
+        this.intrusion.state = true;
+        this.intrusion.roomsName = [];
+
+        for(let i = 0 ; i < this.rooms.length; i++) {
+            if(this.rooms[i].peopleInside > 0) {
+                this.intrusion.state = true;
+                this.intrusion.roomsName.push(this.rooms[i].name);
+            }
         }
     }
 
@@ -134,7 +159,6 @@ export class Office {
     }
 
     public getIndexById(id) {
-        console.log(id);
         for (let i = 0; i < this.rooms.length; i++) {
             if (this.rooms[i].id === id) {
                 return i;
@@ -143,7 +167,6 @@ export class Office {
     }
 
     public getRoomById(id) {
-        console.log(id);
         for (let i = 0 ; i < this.rooms.length ; i++ ) {
             if (this.rooms[i].id === id) {
                 return this.rooms[i];

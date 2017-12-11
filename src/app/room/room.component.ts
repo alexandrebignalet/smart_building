@@ -1,20 +1,22 @@
-import {Component, Input, OnInit, ViewChild} from '@angular/core';
+import { Component, Input, OnChanges, OnInit, SimpleChanges, ViewChild} from '@angular/core';
 import {Room} from "../domain_logic/room.model";
 
 @Component({
-  selector: 'app-room',
-  templateUrl: './room.component.html',
-  styleUrls: ['./room.component.scss']
+    selector: 'app-room',
+    templateUrl: './room.component.html',
+    styleUrls: ['./room.component.scss']
 })
-export class RoomComponent implements OnInit {
+export class RoomComponent implements OnInit, OnChanges {
 
-  @Input() room: Room;
+    @Input() room: Room;
 
-  constructor() {}
 
-  ngOnInit() {
-    console.log(this.room);
-  }
+    ngOnChanges(changes: SimpleChanges): void {
+      console.log(changes);
+    }
+
+    ngOnInit() {
+    }
 
     @ViewChild('videoPlayer') videoplayer: any;
 
