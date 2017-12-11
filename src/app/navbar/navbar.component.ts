@@ -31,6 +31,10 @@ export class NavbarComponent implements OnInit {
     this.appService.addTemp();
   }
 
+    changeScenar() {
+        this.appService.changeScenario();
+    }
+
   onRightClickTemp(event) {
     event.preventDefault();
     this.appService.minusTemp();

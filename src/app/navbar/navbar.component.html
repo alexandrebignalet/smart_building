@@ -17,13 +17,13 @@
       </div>
       <div class="col-md-3">
         <div class="nav-box">
-          <div class="row">
+          <div class="row" *ngIf="appService.office.intrusion.state && appService.office.intrusion.roomsName.length > 0">
             <div class="col-md-2">
-              <i class="fa fa-bell-o fa-2x"></i>
+              <i class="fa fa-bell-o fa-2x" id="blinker"></i>
             </div>
             <div class="col-md-10 alert-box">
-              <div class="alert-box-title">Attention</div>
-              <div class="alert-box-content">Office window is opened.</div>
+              <div class="alert-box-title">Alerte intrusion</div>
+              <div class="alert-box-content">Présence détectée: <span *ngFor="let name of appService.office.intrusion.roomsName">{{name}}, </span></div>
             </div>
           </div>
         </div>
@@ -47,7 +47,7 @@
               <div class="fa-2x">Pau</div>
               <div class="city-box-content">64, Pyrénées-Atlantiques</div>
             </div>
-            <div class="col-md-2">
+            <div class="col-md-2" (click)="changeScenar()">
               <i class="wi wi-night-alt-rain-wind fa-4x"></i>
             </div>
             <div class="col-md-2 fa-3x" (click)="addTemp()" (contextmenu)="onRightClickTemp($event)">

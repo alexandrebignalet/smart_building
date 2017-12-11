@@ -2,20 +2,21 @@ import {Component, Input, OnInit, Output} from '@angular/core';
 import {Office} from "../domain_logic/office.model";
 
 @Component({
-  selector: 'app-sidebar',
-  templateUrl: './sidebar.component.html',
-  styleUrls: ['./sidebar.component.scss']
+    selector: 'app-sidebar',
+    templateUrl: './sidebar.component.html',
+    styleUrls: ['./sidebar.component.scss']
 })
 export class SidebarComponent implements OnInit {
 
-  @Input() office: Office;
+    @Input() office: Office;
 
-  constructor() { }
+    constructor() {
+    }
 
-  ngOnInit() {
-  }
+    ngOnInit() {
+    }
 
-  closeNav() {
-    document.getElementById("mySidenav").style.width = "0";
-  }
+    closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+    }
 }

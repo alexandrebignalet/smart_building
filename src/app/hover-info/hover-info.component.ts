@@ -16,12 +16,9 @@ export class HoverInfoComponent implements OnInit, OnChanges {
     }
 
     ngOnInit(): void {
-        console.log(this.room);
-        console.log('Hover info component init');
     }
 
     ngOnChanges(changes: SimpleChanges) {
-        console.log(changes);
     }
 
 
