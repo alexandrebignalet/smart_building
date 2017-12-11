@@ -23,7 +23,12 @@
                     <i class="fa fa-camera fa-1" aria-hidden="true"></i>
                 </ng-template>
                 <ng-template ngbTabContent>
-
+                    <div class="video">
+                        <video width="100%"  (click)="toggleVideo()" #videoPlayer>
+                            <source src="/assets/videos/videoplayback.mp4" type="video/mp4" />
+                            Browser not supported
+                        </video>
+                    </div>
 
                 </ng-template>
             </ngb-tab>

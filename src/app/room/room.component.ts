@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnInit, ViewChild} from '@angular/core';
 import {Room} from "../domain_logic/room.model";
 
 @Component({
@@ -15,5 +15,16 @@ export class RoomComponent implements OnInit {
   ngOnInit() {
     console.log(this.room);
   }
+
+    @ViewChild('videoPlayer') videoplayer: any;
+
+    toggleVideo(event: any) {
+        if (this.videoplayer.nativeElement.paused) {
+            this.videoplayer.nativeElement.play();
+        } else {
+            this.videoplayer.nativeElement.pause();
+        }
+
+    }
 
 }

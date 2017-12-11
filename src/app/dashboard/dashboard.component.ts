@@ -1,4 +1,4 @@
-import {Component } from '@angular/core';
+import {Component, ViewChild} from '@angular/core';
 
 @Component({
     selector: 'app-dashboard-component',
@@ -33,6 +33,7 @@ export class DashboardComponent  {
         this.lineChartData.push(this.prevision);
         this.lineChartData.push(this.consommation);
     }
+
 
     // lineChart
     // lineChart
