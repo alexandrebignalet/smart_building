@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnDestroy} from '@angular/core';
 import {AppService} from "./domain_logic/app.service";
 import {Office} from "./domain_logic/office.model";
 import {Room} from "./domain_logic/room.model";
@@ -10,7 +10,8 @@ import {Subject, Subscription} from "rxjs";
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit {
+export class AppComponent implements OnDestroy {
+
     title = 'app';
     time: Date;
     lastHoveredRoom: Room;
@@ -45,10 +46,6 @@ export class AppComponent implements OnInit {
         });
     }
 
-    ngOnInit(): void {
-
-    }
-
     public onHoveredMapElement($event) {
         if(!this.office) return;
         this.lastHoveredRoom = this.office.getRoomById($event);
@@ -57,6 +54,10 @@ export class AppComponent implements OnInit {
     public onClickedMapElement($event) {
         this.lastClicked = $event;
         this.index = this.office.getIndexById(this.lastClicked);
+    }
+
+    ngOnDestroy() {
+        this._subscription.unsubscribe();
     }
 
 }

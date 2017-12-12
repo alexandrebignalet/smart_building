@@ -24,6 +24,7 @@ import {OfficeFactory} from "./domain_logic/office.factory";
 import {HoverInfoComponent} from "./hover-info/hover-info.component";
 import {DashboardComponent} from "./dashboard/dashboard.component";
 import {ChartsModule} from "ng2-charts";
+import {PushNotificationsModule} from "ng-push";
 
 
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
@@ -43,6 +44,7 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
         DashboardComponent
     ],
     imports: [
+        PushNotificationsModule,
         SwiperModule,
         BrowserModule,
         FormsModule,

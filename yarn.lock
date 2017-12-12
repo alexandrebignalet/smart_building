@@ -3652,6 +3652,10 @@ negotiator@0.6.1:
   version "0.6.1"
   resolved "https://registry.yarnpkg.com/negotiator/-/negotiator-0.6.1.tgz#2b327184e8992101177b28563fb5e7102acd0ca9"
 
+ng-push@^0.2.1:
+  version "0.2.1"
+  resolved "https://registry.yarnpkg.com/ng-push/-/ng-push-0.2.1.tgz#7d3b0b7e903a3079f22336111e33098508e0f226"
+
 ng2-charts@^1.6.0:
   version "1.6.0"
   resolved "https://registry.yarnpkg.com/ng2-charts/-/ng2-charts-1.6.0.tgz#108a2133ff62a8623895240fadbddbea2951f29d"

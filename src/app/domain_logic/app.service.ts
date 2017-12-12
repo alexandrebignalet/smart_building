@@ -1,7 +1,8 @@
-import {ChangeDetectionStrategy, ChangeDetectorRef, Injectable} from "@angular/core";
+import {Injectable} from "@angular/core";
 import {Office} from "./office.model";
 import {OfficeFactory} from "./office.factory";
 import {Subject} from "rxjs";
+import {PushNotification, PushNotificationsService} from "ng-push";
 
 @Injectable()
 export class AppService {
@@ -12,7 +13,7 @@ export class AppService {
 
     public officeChange: Subject<Office> = new Subject<Office>();
 
-    constructor() {
+    constructor(private pushNotif: PushNotificationsService) {
         this.changeScenario();
     }
 
@@ -30,7 +31,6 @@ export class AppService {
         this.scenarChoosen = this.scenarChoosen === 0 ? 1 : 0;
         this._extTemp = Math.round(Math.random()*15);
         this.office = this.officeFactory.createOfficeScenario(this.scenarChoosen);
-        console.log(this.office);
         this.officeChange.next(this.office);
     }
 }
